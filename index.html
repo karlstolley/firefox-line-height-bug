@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Firefox Line-Height Bug</title>
+  <meta charset="utf-8" />
+  <style>
+  html,body {
+    margin: 0;
+    padding: 22px;
+  }
+  html {
+    font-size: 19px;
+    line-height: 22px;
+  }
+  h1, p {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  ol, li {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 22px;
+    background: orange;
+  }
+  .helvetica {
+    font-family: Helvetica;
+  }
+  .verdana {
+    font-family: Verdana;
+  }
+  ol.none {
+    list-style-type: none;
+  }
+  ol.decimal {
+    list-style-type: decimal;
+  }
+  </style>
+  <link rel="stylesheet" href="//basehold.it/22" />
+</head>
+<body>
+
+<p>
+  These two sets of lists demo what I believe is a bug that I'm experiencing in Firefox 57.0.3
+  (64-bit) and Firefox Developer Edition 58.0b13 (64-bit) on MacOS Sierra 10.13.2. The orange bars
+  on the Helvetica examples should line up perfectly with the background 22px grid. So, too, on the
+  Verdana example with no numbers next to the list items. The bug is with the numbered Verdana
+  example, which drifts off of the grid. I have also seen this behavior with a web-delivered
+  typeface (Camphor, via Fonts.com). Neither Chrome nor Safari exhibit any difference, typeface to
+  typeface, which seems like it should be the expected behavior. 
+</p>
+
+<h1 class="helvetica">Helvetica</h1>
+<ol class="helvetica none">
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+</ol>
+
+<ol class="helvetica decimal">
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+</ol>
+<h1 class="verdana">Verdana</h1>
+<ol class="verdana none">
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+</ol>
+
+<ol class="verdana decimal">
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+</ol>
+
+</body>
+</html>
